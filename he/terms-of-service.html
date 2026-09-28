@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baby Tracker IL · תנאי שימוש">
+  <title>תנאי שימוש - Baby Tracker IL</title>
+  <style>
+    :root {
+      --bg-1: #f5efe7;
+      --bg-2: #efe6ff;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-border: rgba(106, 76, 147, 0.14);
+      --text: #1f2333;
+      --muted: #5b6173;
+      --primary: #6a4c93;
+      --primary-soft: #efe7fb;
+      --warning-bg: #fff4d8;
+      --warning-border: #f0c14b;
+      --shadow: 0 28px 70px rgba(41, 28, 68, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 34%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      padding: 34px 30px 24px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.36), transparent 34%),
+        linear-gradient(135deg, #f9f3ff 0%, #f2ebff 55%, #fdf7ed 100%);
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .doc-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(106, 76, 147, 0.16);
+      transition: transform 0.16s ease, border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+    }
+
+    .tab:hover,
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(106, 76, 147, 0.3);
+      color: var(--text);
+    }
+
+    .tab.active,
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .language-switcher {
+      display: grid;
+      gap: 10px;
+    }
+
+    .switcher-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section + .section {
+      margin-top: 28px;
+    }
+
+    .section h2,
+    .callout h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p,
+    li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    p + p,
+    p + ul,
+    ul + p,
+    ul + ul {
+      margin-top: 14px;
+    }
+
+    .lead {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 14px 0 0;
+      padding-inline-start: 22px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+    }
+
+    .intro-box {
+      background: var(--primary-soft);
+      border: 1px solid rgba(106, 76, 147, 0.12);
+      margin-bottom: 26px;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid rgba(240, 193, 75, 0.44);
+      margin-top: 26px;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      padding-inline-start: 52px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .footer {
+      display: grid;
+      gap: 6px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .hero,
+      .content { padding: 22px 18px; }
+      .tab,
+      .pill { width: 100%; justify-content: center; }
+      .steps li { padding-inline-start: 48px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Baby Tracker IL</p>
+      <h1>תנאי שימוש</h1>
+      <p class="meta">עדכון אחרון: 19 במרץ 2026</p>
+      <div class="toolbar">
+        <nav class="doc-tabs"><a class="tab" href="index.html">מדיניות פרטיות</a><a class="tab active" href="terms-of-service.html">תנאי שימוש</a><a class="tab" href="account-deletion.html">מחיקת חשבון</a></nav>
+        <div class="language-switcher"><span class="switcher-label">שפה</span><div class="pill-row"><a class="pill" href="../terms-of-service.html" lang="en">English</a><a class="pill active" href="terms-of-service.html" lang="he">עברית</a><a class="pill" href="../es/terms-of-service.html" lang="es">Español</a><a class="pill" href="../fr/terms-of-service.html" lang="fr">Français</a><a class="pill" href="../ru/terms-of-service.html" lang="ru">Русский</a></div></div>
+      </div>
+    </header>
+    <div class="content">
+      
+        <section class="section">
+          <h2>1. קבלת התנאים</h2>
+          <p>ביצירת חשבון או בשימוש ב-Baby Tracker IL (&quot;האפליקציה&quot;), הנך מסכים/ה להיות כפוף/ה לתנאי שימוש אלה (&quot;התנאים&quot;). אם אינך מסכים/ה לתנאים אלה, אל תשתמש/י באפליקציה.</p><p>תנאים אלה מהווים הסכם מחייב משפטית בינך לבין Baby Tracker IL. אנא קרא/י אותם בעיון.</p>
+        </section>
+      
+        <section class="section">
+          <h2>2. תיאור השירות</h2>
+          <p>Baby Tracker IL היא אפליקציה סלולרית המסייעת להורים ומטפלים לעקוב אחר התקדמות ההיריון והתפתחות התינוק. התכונות כוללות:</p><ul><li>מעקב שבועי אחר היריון וטיימר צירים.</li><li>מעקב אחר יילוד: יומני הנקה/האכלה, שינה וחיתולים.</li><li>גרפי גדילה המבוססים על תקני ארגון הבריאות העולמי.</li><li>מעקב אחר אבני דרך התפתחותיות.</li><li>לוח חיסונים ובדיקות רפואיות (בהתאם להנחיות משרד הבריאות הישראלי).</li><li>מפת בקיעת שיניים.</li><li>עוזר הורות מבוסס בינה מלאכותית (&quot;האם זה נורמלי?&quot;).</li><li>שיתוף פרופילים עם מספר מטפלים.</li><li>תזכורות באמצעות התראות Push.</li></ul><p>התכונות עשויות להשתנות בין המסלול החינמי למסלול הפרימיום, ועשויות להשתנות, להתווסף או להיוותר בכל עת עם הודעה סבירה.</p>
+        </section>
+      
+        <section class="section">
+          <h2>3. זכאות</h2>
+          <p>עליך להיות בן/בת 18 לפחות (או בגיל הבגרות החוקית בתחום השיפוט שלך) כדי ליצור חשבון ולהשתמש באפליקציה זו. האפליקציה מיועדת לשימוש על ידי הורים, אפוטרופוסים חוקיים ומטפלים מורשים. היא אינה מיועדת לשימוש ישיר על ידי ילדים או קטינים.</p><p>בשימוש באפליקציה, הנך מצהיר/ה ומתחייב/ת כי הנך עומד/ת בדרישות זכאות אלה וכי יש לך את הסמכות החוקית להזין נתונים על כל ילד/ה שאת/ה יוצר/ת את הפרופיל שלו/ה.</p>
+        </section>
+      
+        <section class="section">
+          <h2>4. הרשמה לחשבון</h2>
+          <p>כדי להשתמש באפליקציה, עליך ליצור חשבון עם כתובת דוא&quot;ל תקפה. הנך אחראי/ת ל:</p><ul><li>שמירה על סודיות פרטי ההתחברות שלך.</li><li>כל הפעילות המתרחשת תחת חשבונך.</li><li>מתן מידע מדויק ועדכני.</li><li>הודעה מיידית אלינו אם את/ה חושד/ת בגישה בלתי מורשית לחשבונך.</li></ul><p>אנו שומרים לעצמנו את הזכות להשעות או לסגור חשבונות המפרים תנאים אלה.</p>
+        </section>
+      
+        <section class="section">
+          <h2>5. מסלולי מנוי וחיוב</h2>
+          <p>האפליקציה מציעה שני מסלולים:</p><p class="lead">מסלול חינמי:</p><ul><li>תכונות מעקב בסיסיות עם פונקציונליות מוגבלת.</li><li>עשוי לכלול פרסומות Google AdMob לא-מותאמות אישית, גם כבאנרים וגם כאינטרסטישל, באזורים נבחרים של גרסאות Android שבהן הפרסום מופעל.</li><li>שימוש מוגבל בעוזר הבינה המלאכותית (בכפוף למגבלות הודעות יומיות).</li></ul><p class="lead">מסלול פרימיום:</p><ul><li>כל התכונות פתוחות, כולל גרפי גדילה מתקדמים, ייצוא PDF וגישה מורחבת לעוזר הבינה המלאכותית.</li><li>ללא פרסומות.</li><li>תמיכה במספר פרופילי ילדים.</li></ul><p>נכון לעכשיו, רכישות פרימיום בגרסה הנוכחית של האפליקציה מעובדות דרך Google Play ב-Android. Baby Tracker IL אינה מעבדת תשלומי כרטיס ישירות. המחיר מוצג על ידי החנות הרלוונטית ועשוי להשתנות לפי אזור. אם בעתיד נציע מנויים בתשלום ב-iOS, יחולו שם תנאי החיוב של Apple App Store.</p><p>בהרשמה למנוי, הנך מאשר/ת לחנות הרלוונטית לחייב את אמצעי התשלום שבחרת באופן חוזר עד לביטול.</p>
+        </section>
+      
+        <section class="section">
+          <h2>6. תקופת ניסיון חינמית</h2>
+          <p>אם מוצעת תקופת ניסיון חינמית, הדבר יצוין בבירור בעת ההרשמה למנוי. בתום תקופת הניסיון, המנוי שלך יומר אוטומטית למנוי בתשלום אלא אם תבטל/י לפני תום הניסיון. ניתן לבטל בכל עת במהלך הניסיון ללא עלות דרך הגדרות המנוי של המכשיר שלך.</p>
+        </section>
+      
+        <section class="section">
+          <h2>7. מדיניות ביטול</h2>
+          <p>ניתן לבטל את מנוי הפרימיום בכל עת דרך החנות ששימשה לרכישה.</p><ul><li>Android (נתמך כרגע): Google Play Store &gt; מנויים &gt; Baby Tracker IL &gt; ביטול.</li><li>iOS: אם בעתיד יוצעו מנויים ב-iOS, הביטול יתבצע דרך הגדרות המנויים של Apple.</li></ul><p class="lead">לאחר ביטול:</p><ul><li>הגישה לפרימיום נשארת פעילה עד סוף תקופת החיוב הנוכחית.</li><li>לא מונפקים החזרים יחסיים עבור חלקים שלא נוצלו מתקופת החיוב.</li><li>לאחר התפוגה, חשבונך חוזר למסלול החינמי.</li><li>הנתונים שלך נשמרים ונשארים נגישים במסגרת מגבלות המסלול החינמי.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>8. מדיניות החזרים</h2>
+          <p>החזרים מטופלים על ידי פלטפורמת התשלום ששימשה לרכישה.</p><ul><li>Google Play (נתמך כרגע): בקשות החזר מטופלות לפי מדיניות Google Play. ראו <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer">https://support.google.com/googleplay/answer/2479637</a></li><li>Apple App Store: אם בעתיד יוצעו מנויים ב-iOS, בקשות החזר יטופלו דרך תהליך ההחזרים של Apple ב-<a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">https://reportaproblem.apple.com</a></li></ul><p>Baby Tracker IL אינה מעבדת החזרים ישירות ואינה יכולה להנפיק החזרי חנות מחוץ למנגנונים של הפלטפורמה הרלוונטית.</p>
+        </section>
+      
+        <section class="section">
+          <h2>9. עוזר בינה מלאכותית — הצהרת פטור רפואי</h2>
+          <p>חשוב: אנא קרא/י סעיף זה בעיון.</p><p>האפליקציה כוללת תכונה מבוססת בינה מלאכותית בשם &quot;האם זה נורמלי?&quot; המספקת תשובות מידעיות כלליות על היריון והתפתחות התינוק. תכונה זו מופעלת על ידי Google Gemini AI.</p><p>תכונה זו אינה שירות רפואי. באופן ספציפי:</p><ul><li>עוזר הבינה המלאכותית אינו מספק ייעוץ רפואי, אבחון או המלצות לטיפול.</li><li>הוא אינו מחליף התייעצות עם רופא ילדים, רופא נשים, מיילדת או כל איש מקצוע רפואי מוסמך אחר.</li><li>התשובות נוצרות על ידי בינה מלאכותית ועלולות להכיל אי-דיוקים, מידע מיושן או מידע שאינו רלוונטי למצבך הספציפי.</li><li>אסור לך בשום מקרה להשתמש בתשובות הבינה המלאכותית כבסיס יחיד להחלטות רפואיות הנוגעות לבריאותך או לבריאות ילדך.</li><li>בכל מקרה חירום רפואי, פנה/י לשירותי החירום המקומיים (למשל: מד&quot;א 101 בישראל, 112 באירופה) או גש/י לחדר מיון הקרוב מיד.</li></ul><p class="lead">בשימוש בעוזר הבינה המלאכותית, הנך מאשר/ת ומסכים/ה כי:</p><ul><li>את/ה משתמש/ת בתכונה זו על אחריותך בלבד.</li><li>Baby Tracker IL, מפתחיה ושותפיה אינם נושאים באחריות לכל פעולה שננקטה או החלטה שהתקבלה על סמך תשובות שנוצרו על ידי בינה מלאכותית.</li><li>תתייעץ/י תמיד עם איש מקצוע רפואי מוסמך בנוגע לדאגות רפואיות.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>10. תוכן משתמש ונתונים</h2>
+          <p>הנך שומר/ת על הבעלות על כל הנתונים שהנך מזין/ה באפליקציה (פרופילי ילדים, רשומות בריאות, אבני דרך, תמונות וכו&#39;). הנך אחראי/ת בלעדית לדיוק ולחוקיות הנתונים שאת/ה מספק/ת.</p><p>בשימוש באפליקציה, הנך מעניק/ה ל-Baby Tracker IL רישיון מוגבל לעבד את הנתונים שלך אך ורק לצורך אספקת שירותי האפליקציה, כמתואר במדיניות הפרטיות שלנו.</p><p>למידע מפורט על האופן שבו אנו אוספים, משתמשים, מאחסנים ומגנים על הנתונים שלך, אנא עיין/י במדיניות הפרטיות שלנו, הזמינה בתוך האפליקציה.</p>
+        </section>
+      
+        <section class="section">
+          <h2>11. שימוש אסור</h2>
+          <p>הנך מתחייב/ת שלא:</p><ul><li>להשתמש באפליקציה לכל מטרה בלתי חוקית או בניגוד לכל חוק רלוונטי.</li><li>לנסות לקבל גישה בלתי מורשית לאפליקציה, לחשבונות של משתמשים אחרים, או לשרתים ומערכות שלנו.</li><li>לבצע הנדסה לאחור, דה-קומפילציה או פירוק של האפליקציה או מרכיביה.</li><li>להשתמש במערכות אוטומטיות (בוטים, סקרייפרים, זחלנים) כדי לגשת או לאסוף נתונים מהאפליקציה.</li><li>להעביר וירוסים, תוכנות זדוניות או כל קוד מזיק.</li><li>להתחזות לאדם או ישות אחרת.</li><li>להשתמש באפליקציה כדי להטריד, לפגוע או להזיק לאחרים.</li></ul><p>הפרת תנאים אלה עלולה לגרום להשעיה או סגירה מיידית של החשבון.</p>
+        </section>
+      
+        <section class="section">
+          <h2>12. קניין רוחני</h2>
+          <p>האפליקציה, כולל העיצוב, הקוד, התכונות, התוכן, הסימנים המסחריים והלוגואים שלה, היא קניינה הרוחני של Baby Tracker IL ומוגנת על ידי חוקי זכויות יוצרים, סימנים מסחריים וקניין רוחני החלים.</p><p>אין להעתיק, לשנות, להפיץ, למכור או ליצור יצירות נגזרות המבוססות על האפליקציה או תוכנה ללא אישור בכתב מראש.</p><p>תוכן שנוצר על ידי המשתמש (הנתונים, התמונות, ההערות שלך) נשאר רכושך, בכפוף לרישיון המוגבל המוענק בסעיף 10.</p>
+        </section>
+      
+        <section class="section">
+          <h2>13. הגבלת אחריות וכתב ויתור על אחריות</h2>
+          <p>האפליקציה מסופקת &quot;כמות שהיא&quot; ו&quot;כפי שהיא זמינה&quot; ללא אחריות מכל סוג, בין אם מפורשת או משתמעת, כולל אך לא מוגבל לאחריות לסחירות, התאמה למטרה מסוימת ואי-הפרה.</p><p class="lead">Baby Tracker IL אינה מתחייבת כי:</p><ul><li>האפליקציה תהיה זמינה בכל עת או ללא הפרעות.</li><li>האפליקציה תהיה נקייה משגיאות, באגים או פגיעויות אבטחה.</li><li>המידע שמסופק על ידי האפליקציה (כולל תשובות בינה מלאכותית, אחוזוני גדילה ולוחות זמנים רפואיים) יהיה מדויק, מלא או עדכני.</li></ul><p>במידה המרבית המותרת על פי הדין החל, Baby Tracker IL ומפתחיה לא יישאו באחריות לכל נזק עקיף, מקרי, מיוחד, תוצאתי או עונשי הנובע מ- או הקשור לשימושך באפליקציה.</p><p>בתחומי שיפוט שאינם מאפשרים החרגה של אחריות מסוימת או הגבלת אחריות, אחריותנו תהיה מוגבלת למידה המרבית המותרת על פי החוק.</p>
+        </section>
+      
+        <section class="section">
+          <h2>14. שינויים בתנאים</h2>
+          <p>אנו עשויים לעדכן תנאים אלה מעת לעת. לגבי שינויים מהותיים, ננסה להודיע לך באמצעות התראה באפליקציה או בדוא&quot;ל לפני שהם ייכנסו לתוקף כאשר הדבר מתאים.</p><p>המשך השימוש שלך באפליקציה לאחר מועד תחילת התנאים המעודכנים מהווה את הסכמתך לשינויים. אם אינך מסכים/ה לתנאים המעודכנים, עליך להפסיק להשתמש באפליקציה ולמחוק את חשבונך.</p>
+        </section>
+      
+        <section class="section">
+          <h2>15. דין חל ויישוב סכסוכים</h2>
+          <p>תנאים אלה כפופים לחוקי מדינת ישראל. כל סכסוך הנובע מ- או הקשור לתנאים אלה או לשימושך באפליקציה יהיה כפוף לסמכות השיפוט הבלעדית של בתי המשפט המוסמכים בתל אביב-יפו, ישראל.</p><p>למשתמשים באיחוד האירופי: שום דבר בתנאים אלה אינו מגביל את זכויותיך לפי חוקי הגנת הצרכן החלים באיחוד האירופי. הנך שומר/ת על הזכות להגיש תביעות בפני בתי המשפט במדינת מגוריך.</p>
+        </section>
+      
+        <section class="section">
+          <h2>16. יצירת קשר</h2>
+          <p>לשאלות או חששות בנוגע לתנאי שימוש אלה, ניתן לפנות אלינו:</p><p>דוא&quot;ל: <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></p>
+        </section>
+      
+      <footer class="footer">
+        <div>צריכים עזרה או יש לכם שאלות?</div>
+        <div>אפשר לפנות אלינו בכתובת <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

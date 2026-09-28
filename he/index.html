@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baby Tracker IL · מדיניות פרטיות">
+  <title>מדיניות פרטיות - Baby Tracker IL</title>
+  <style>
+    :root {
+      --bg-1: #f5efe7;
+      --bg-2: #efe6ff;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-border: rgba(106, 76, 147, 0.14);
+      --text: #1f2333;
+      --muted: #5b6173;
+      --primary: #6a4c93;
+      --primary-soft: #efe7fb;
+      --warning-bg: #fff4d8;
+      --warning-border: #f0c14b;
+      --shadow: 0 28px 70px rgba(41, 28, 68, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 34%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      padding: 34px 30px 24px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.36), transparent 34%),
+        linear-gradient(135deg, #f9f3ff 0%, #f2ebff 55%, #fdf7ed 100%);
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .doc-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(106, 76, 147, 0.16);
+      transition: transform 0.16s ease, border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+    }
+
+    .tab:hover,
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(106, 76, 147, 0.3);
+      color: var(--text);
+    }
+
+    .tab.active,
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .language-switcher {
+      display: grid;
+      gap: 10px;
+    }
+
+    .switcher-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section + .section {
+      margin-top: 28px;
+    }
+
+    .section h2,
+    .callout h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p,
+    li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    p + p,
+    p + ul,
+    ul + p,
+    ul + ul {
+      margin-top: 14px;
+    }
+
+    .lead {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 14px 0 0;
+      padding-inline-start: 22px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+    }
+
+    .intro-box {
+      background: var(--primary-soft);
+      border: 1px solid rgba(106, 76, 147, 0.12);
+      margin-bottom: 26px;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid rgba(240, 193, 75, 0.44);
+      margin-top: 26px;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      padding-inline-start: 52px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .footer {
+      display: grid;
+      gap: 6px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .hero,
+      .content { padding: 22px 18px; }
+      .tab,
+      .pill { width: 100%; justify-content: center; }
+      .steps li { padding-inline-start: 48px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Baby Tracker IL</p>
+      <h1>מדיניות פרטיות</h1>
+      <p class="meta">עדכון אחרון: 28 בספטמבר 2026</p>
+      <div class="toolbar">
+        <nav class="doc-tabs"><a class="tab active" href="index.html">מדיניות פרטיות</a><a class="tab" href="terms-of-service.html">תנאי שימוש</a><a class="tab" href="account-deletion.html">מחיקת חשבון</a></nav>
+        <div class="language-switcher"><span class="switcher-label">שפה</span><div class="pill-row"><a class="pill" href="../index.html" lang="en">English</a><a class="pill active" href="index.html" lang="he">עברית</a><a class="pill" href="../es/index.html" lang="es">Español</a><a class="pill" href="../fr/index.html" lang="fr">Français</a><a class="pill" href="../ru/index.html" lang="ru">Русский</a></div></div>
+      </div>
+    </header>
+    <div class="content">
+      
+        <section class="section">
+          <h2>1. בעל השליטה במידע</h2>
+          <p>Baby Tracker IL (&quot;האפליקציה&quot;) מפותחת ומופעלת באופן עצמאי מתל אביב, ישראל. לפניות בנושא פרטיות, ניתן לפנות אלינו בכתובת: <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a>.</p>
+        </section>
+      
+        <section class="section">
+          <h2>2. אודות מדיניות זו</h2>
+          <p>מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים, מאחסנים, משתפים ומגנים על המידע האישי שלכם — כולל נתוני בריאות רגישים — בעת השימוש באפליקציה.</p><p>מדיניות זו מתארת כיצד הגרסה הנוכחית של האפליקציה מטפלת במידע שלכם. מטרתה לשקף את דיני הפרטיות החלים, כולל חוק הגנת הפרטיות, התשמ&quot;א-1981, ובמקרים הרלוונטיים גם את תקנות ה-GDPR של האיחוד האירופי.</p>
+        </section>
+      
+        <section class="section">
+          <h2>3. הבסיס המשפטי לעיבוד מידע</h2>
+          <p>אנו מעבדים את המידע שלכם על הבסיסים המשפטיים הבאים:</p><ul><li>מידע חשבון (אימייל, שם): ביצוע חוזה (GDPR סעיף 6(1)(b)) — נדרש לאספקת שירותי האפליקציה.</li><li>מידע מכשיר וטכני: אינטרס לגיטימי (סעיף 6(1)(f)) — להבטחת תאימות ותיקון באגים. האינטרסים הלגיטימיים שלנו מאוזנים מול זכויותיכם וחירויותיכם ומוגבלים למה שנדרש באופן הכרחי לאבטחה ויציבות האפליקציה.</li><li>התראות: הסכמה (סעיף 6(1)(a)) — אתם בוחרים להפעיל ויכולים לבטל בכל עת.</li><li>פרסום (חינם): אינטרס לגיטימי (סעיף 6(1)(f)) — בגרסאות Android שבהן פרסום מופעל, הגרסה החינמית עשויה להציג פרסומות Google AdMob לא-מותאמות אישית, גם כבאנרים וגם כאינטרסטישל, באזורים נבחרים באפליקציה. אנו מבקשים רק פרסומות לא-מותאמות אישית, ומנויי פרימיום אינם רואים פרסומות.</li><li>עוזר הורות AI: הסכמה מפורשת (סעיף 6(1)(a)) — לפני השימוש הראשון בתכונת &quot;האם זה נורמלי?&quot;, מוצג לכם דיאלוג הסכמה המסביר שנתוני הבריאות ההקשריים של ילדכם יישלחו ל-Google Gemini ליצירת תשובה. עליכם לאשר לפני שכל מידע מועבר.</li></ul><p>נתוני בריאות (GDPR סעיף 9):<br>האפליקציה מעבדת נתוני בריאות כולל מעקב הריון, רשומות צירים, מדידות גדילה, לוחות חיסונים, יומני האכלה/שינה/חיתולים ומידע רפואי. זהו מידע מקטגוריה מיוחדת לפי סעיף 9.</p><p>הבסיס המשפטי שלנו הוא הסכמתכם המפורשת (סעיף 9(2)(a)). אתם נותנים הסכמה זו כאשר אתם מזינים מרצונכם מידע בריאותי לאפליקציה. כאשר אתם משתמשים בעוזר ה-AI, מוצג לכם דיאלוג הסכמה מפורשת לפני שנתוני בריאות הקשריים נשלחים ל-Google Gemini AI ליצירת תשובות. ניתן לבטל הסכמה על ידי הפסקת השימוש בתכונות הרלוונטיות ובקשת מחיקת נתוני החשבון שלכם.</p>
+        </section>
+      
+        <section class="section">
+          <h2>4. מידע שאנו אוספים</h2>
+          <p class="lead">מידע שאתם מספקים:</p><ul><li>חשבון: כתובת אימייל, שם תצוגה, תמונת פרופיל.</li><li>פרופילי ילדים: שם, תאריך לידה, תאריך משוער, מין, משקל/אורך לידה, סוג לידה, היקף ראש, מידת נעל/ביגוד, פרטי תחנת טיפת חלב.</li><li>הריון: תאריך משוער, מעקב שבועי.</li><li>צירים: זמני התחלה/סיום, משך, תדירות, עוצמה.</li><li>גדילה: משקל, גובה, היקף ראש.</li><li>רפואי: תאריכי חיסונים, סטטוס בדיקות, טיפת חלב, תאריכי תורים.</li><li>אבני דרך: &quot;פעם ראשונה&quot;, תאריכים, תמונות, סרטונים, הערות.</li><li>האכלה: סוג (שד/בקבוק), כמות, זמן, משך, צד, הערות.</li><li>שינה: שעת התחלה, משך, הערות.</li><li>חיתולים: סוג (רטוב/מלוכלך/מעורב), צבע צואה, מרקם צואה, פריחת חיתול, זמן, הערות.</li><li>שיניים: מיקום ותאריכי בקיעה.</li><li>שיחות AI: שאלות ששואלים את העוזר &quot;האם זה נורמלי?&quot; והתשובות שנוצרו.</li><li>שיתוף מטפלים: כתובות אימייל של אנשים שהזמנתם לגשת לפרופיל ילד, תפקידם וסטטוס ההזמנה.</li></ul><p class="lead">מידע שנאסף אוטומטית:</p><ul><li>סוג מכשיר, גרסת מערכת הפעלה וגרסת אפליקציה (לתאימות ותיקון באגים).</li><li>העדפת שפה.</li><li>נתוני פרסום: בגרסאות Android שבהן פרסום מופעל, Google AdMob עשוי לאסוף כתובת IP, סוג מכשיר ונתוני אינטראקציה עם מודעות כאשר מוצגות פרסומות לא-מותאמות באזורים נבחרים של הגרסה החינמית.</li></ul><p>מידע ביומטרי: אם אתם מפעילים נעילה ביומטרית (Face ID / טביעת אצבע), הנתון הביומטרי מעובד כולו על המכשיר שלכם על ידי מערכת ההפעלה. אנו לעולם לא מקבלים, מעבירים או שומרים מידע ביומטרי. רק טוקן מוצפן מאוחסן מקומית על המכשיר.</p><p>גישה ליומן: אם תבחרו להוסיף תורים רפואיים ליומן המכשיר, האפליקציה תבקש הרשאת יומן ותכתוב את האירועים מקומית על המכשיר. נתוני היומן אינם נשלחים לשרתים שלנו.</p>
+        </section>
+      
+        <section class="section">
+          <h2>5. כיצד אנו משתמשים במידע</h2>
+          <p>אנו משתמשים במידע כדי:</p><ul><li>לספק מעקב הריון ותכונות התפתחות תינוק.</li><li>להציג צירי זמן רפואיים ישראליים (הנחיות משרד הבריאות הישראלי, לוחות זמנים של טיפת חלב ותקני גדילה של WHO).</li><li>ליצור גרפי גדילה ופרצנטילים.</li><li>לשלוח תזכורות אופציונליות להאכלה, שינה, חיסונים, בדיקות ואבני דרך (אם הפעלתם התראות).</li><li>להפעיל את עוזר ה-AI &quot;האם זה נורמלי?&quot; באמצעות נתוני ילד הקשריים.</li><li>לאפשר לכם לשתף פרופילי ילדים עם מטפלים שהזמנתם.</li><li>להגיב לבקשות תמיכה שאתם שולחים אלינו באימייל.</li><li>להציג פרסומות Google AdMob לא-מותאמות אישית, גם כבאנרים וגם כאינטרסטישל, באזורים נבחרים של הגרסה החינמית ל-Android כאשר הפרסום מופעל.</li><li>לעבד מנויי Android בתוך האפליקציה באמצעות RevenueCat ו-Google Play.</li><li>לתקן באגים ולשפר את האפליקציה.</li></ul><p>אנחנו לא משתמשים במידע שלכם ל: פרופיילינג מסחרי, קבלת החלטות אוטומטית, או מכירה/השכרה לצד שלישי כלשהו. אנחנו לא משתפים נתוני בריאות עם מבטחים, מעסיקים או גורמים מסחריים.</p>
+        </section>
+      
+        <section class="section">
+          <h2>6. שיתוף מידע והעברות בינלאומיות</h2>
+          <p>אנחנו לא מוכרים, משכירים או סוחרים במידע האישי שלכם. הגרסה הנוכחית של האפליקציה משתמשת בספקי השירות הבאים:</p><ul><li>Supabase (Supabase Inc.): מסד נתונים, אימות, פונקציות edge ואחסון קבצים.</li><li>התחברות עם Google (Google LLC): אופציונלי. אם תבחרו להתחבר עם Google, ‏Google משתפת איתנו את שמכם, כתובת האימייל ותמונת הפרופיל כדי ליצור את החשבון או לגשת אליו. איננו מקבלים לעולם את סיסמת ה-Google שלכם.</li><li>Expo: עדכוני אפליקציה ותשתית להתראות push.</li><li>Google Gemini API (Google LLC): מפעיל את העוזר &quot;האם זה נורמלי?&quot;. כאשר אתם משתמשים בתכונה זו, נתוני ילד הקשריים כגון גיל, מין וסיכומים אחרונים של האכלה, שינה, חיתולים, גדילה ואבני דרך נשלחים ל-Gemini API של Google כדי ליצור תשובה. היסטוריית השיחות נשמרת במסד הנתונים שלנו.</li><li>Google AdMob (Google LLC): בגרסאות Android שבהן פרסום מופעל, עשוי להציג פרסומות לא-מותאמות אישית, גם כבאנרים וגם כאינטרסטישל, באזורים נבחרים של הגרסה החינמית.</li><li>RevenueCat (RevenueCat Inc.): ב-Android, מסייע בניהול מצב המנוי ואימות רכישות.</li><li>Google Play Billing / שירותי התראות של Apple: תשתיות החיוב של החנות ומשלוח ההתראות עשויות לעבד מזהים טכניים הנדרשים לשירותים אלה.</li></ul><p>שיתוף מטפלים: אם אתם מזמינים אדם אחר לגשת לפרופיל ילד, כתובת האימייל של ההזמנה נשמרת במסד הנתונים שלנו והאפליקציה יוצרת קישור הזמנה שניתן לשתף. מטפלים מוזמנים יכולים לצפות ובכפוף לתפקידם גם לערוך את נתוני הילד לאחר קבלת ההזמנה. האחריות להבטחת הסכמה מתאימה לשיתוף נתוני הילד עם מטפלים מוזמנים חלה עליכם.</p><p>העברות בינלאומיות: חלק מספקי השירות הללו עשויים לעבד מידע מחוץ למדינת המגורים שלכם, כולל בארצות הברית.</p><p>אנו עשויים גם לחשוף מידע אם נדרש על פי החוק הישראלי או הליך משפטי תקף, או בהסכמתכם המפורשת.</p>
+        </section>
+      
+        <section class="section">
+          <h2>7. אבטחת מידע</h2>
+          <ul><li>אבטחה ברמת שורה (RLS) ברמת מסד הנתונים — כל משתמש יכול לגשת רק למידע שלו.</li><li>הצפנה בהעברה: TLS 1.2+ לכל התקשורת.</li><li>הצפנה באחסון: AES-256 לכל המידע השמור.</li><li>אימות מאובטח באמצעות טוקני JWT.</li><li>עקרון גישה מינימלית לכל ספקי השירות.</li><li>נהלי האבטחה נבדקים ומתעדכנים כחלק מתהליך הפיתוח שלנו.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>8. הודעה על פרצת מידע</h2>
+          <p>במקרה של פרצת מידע אישי העלולה לסכן את זכויותיכם וחירויותיכם:</p><ul><li>נודיע לרשות הפיקוח הרלוונטית (הרשות להגנת הפרטיות בישראל ו/או רשות הגנת מידע אירופית רלוונטית) תוך 72 שעות, כנדרש בסעיף 33 ל-GDPR.</li><li>אם הפרצה מהווה סיכון גבוה עבורכם, נודיע לכם ישירות ללא דיחוי מיותר באמצעות אימייל או התראה באפליקציה, כנדרש בסעיף 34 ל-GDPR.</li><li>ההודעה תכלול: אופי הפרצה, המידע שנפגע, השלכות אפשריות והצעדים שננקטים לטיפול.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>9. פרטיות ילדים</h2>
+          <p>Baby Tracker IL הוא כלי המיועד אך ורק למשתמשים בוגרים (הורים ואפוטרופוסים חוקיים). האפליקציה אינה מיועדת לילדים ואינה מתוכננת לשימוש על ידי מי שמתחת לגיל 16. אנו לא אוספים ביודעין מידע אישי ישירות מילדים.</p><p>כל המידע הקשור לילדים — כולל שמות, רשומות בריאות, אבני דרך ומדידות — מוזן ומנוהל אך ורק על ידי בעל החשבון הבוגר, שאחראי לדיוק המידע ולסמכות חוקית לספקו.</p><p>אם נגלה שמידע נאסף מאדם מתחת לגיל 16 ללא הסכמת הורה מאומתת, נמחק את המידע באופן מיידי.</p>
+        </section>
+      
+        <section class="section">
+          <h2>10. הזכויות שלכם</h2>
+          <p>על פי החוק הישראלי ו-GDPR, עומדות לכם הזכויות הבאות:</p><ul><li>גישה (סעיף 15): לבקש עותק של כל המידע שברשותנו.</li><li>תיקון (סעיף 16): לתקן מידע שגוי או חלקי.</li><li>מחיקה (סעיף 17): למחוק את חשבונכם ואת המידע המשויך, בכפוף למגבלות טכניות ומשפטיות.</li><li>הגבלה (סעיף 18): להגביל עיבוד בנסיבות מסוימות.</li><li>ניידות מידע (סעיף 20): לקבל מידע בפורמט קריא למכונה כאשר הדבר חל.</li><li>התנגדות (סעיף 21): להתנגד לעיבוד על בסיס אינטרס לגיטימי.</li><li>ביטול הסכמה (סעיף 7(3)): לבטל הסכמה לעיבוד נתוני בריאות בכל עת.</li></ul><p>מחיקת חשבון: ניתן למחוק את חשבונכם ישירות מהאפליקציה דרך הגדרות &gt; &quot;מחיקת חשבון&quot;. היישום הנוכחי מוחק מיד את חשבון האימות שלכם ומסיר רשומות מסד נתונים של פרופילי ילדים שבבעלותכם הבלעדית. אם פרופיל ילד משותף עם מטפלים אחרים, הפרופיל המשותף נשאר זמין עבורם. חלק מקובצי המדיה שהועלו, גיבויים ולוגים של ספקים עשויים להישאר עד לניקוי מאוחר יותר בהתאם למדיניות השמירה הרלוונטית. ניתן גם לבקש מחיקת חשבון באמצעות אימייל ל<a href="mailto:-tinoktracker@gmail.com">-tinoktracker@gmail.com</a>.</p><p>למימוש זכויות אחרות, שלחו אימייל ל<a href="mailto:-tinoktracker@gmail.com">-tinoktracker@gmail.com</a>. אנו משתדלים להשיב בתוך זמן סביר, וכאשר הדבר חל גם בתוך פרק הזמן הנדרש על פי דין.</p><p>זכות תלונה: ניתן להגיש תלונה לרשות להגנת הפרטיות — אתר: <a href="https://www.gov.il/en/departments/the_privacy_protection_authority" target="_blank" rel="noopener noreferrer">gov.il/en/departments/the_privacy_protection_authority</a>, אימייל: <a href="mailto:ppa@justice.gov.il">ppa@justice.gov.il</a>, טלפון: *3103. תושבי האיחוד האירופי יכולים גם לפנות לרשות הגנת המידע המקומית שלהם.</p>
+        </section>
+      
+        <section class="section">
+          <h2>11. שמירת מידע</h2>
+          <ul><li>חשבונות פעילים: מידע נשמר כל עוד החשבון פעיל.</li><li>פרופילי ילדים שנמחקו ושייכים רק לכם: נמחקים כחלק מתהליך מחיקת החשבון.</li><li>חשבונות שנמחקו: חשבון האימות נמחק מיד. רשומות מסד הנתונים הקשורות לפרופילי ילדים שבבעלותכם הבלעדית נמחקות במהלך התהליך. פרופילי ילדים משותפים נשארים זמינים למטפלים האחרים שלהם.</li><li>היסטוריית שיחות AI: נשמרת כל עוד פרופיל הילד הרלוונטי קיים במסד הנתונים.</li><li>הזמנות מטפלים: הזמנות שפג תוקפן מתבטלות אוטומטית לאחר 7 ימים.</li><li>מדיה שהועלתה, גיבויים ולוגים תשתיתיים: עשויים להישמר לזמן מוגבל בהתאם למדיניות השמירה והגיבוי של ספקי השירות הרלוונטיים.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>12. שינויים במדיניות זו</h2>
+          <p>אנו עשויים לעדכן מדיניות זו מעת לעת. לשינויים משמעותיים (קטגוריות מידע חדשות, מעבדים חדשים, שינויי בסיס משפטי), נודיע באמצעות התראה באפליקציה או אימייל לפני שהשינויים נכנסים לתוקף. אם שינויים משפיעים על עיבוד נתוני בריאות, נבקש הסכמה מפורשת מחודשת. לשינויים שאינם משפיעים על זכויותיכם או על עיבוד מידע רגיש, ניתן הודעה מוקדמת סבירה ותוכלו לבחור להפסיק להשתמש באפליקציה אם אינכם מסכימים.</p>
+        </section>
+      
+        <section class="section">
+          <h2>13. דין חל</h2>
+          <p>מדיניות פרטיות זו כפופה לחוקי מדינת ישראל. סכסוכים הנובעים ממדיניות זו יהיו בסמכות בתי המשפט המוסמכים בתל אביב-יפו, ישראל.</p><p>עבור משתמשים באיחוד האירופי: אין בסעיף זה כדי להגביל את זכויותיכם לפי GDPR. אתם שומרים על זכותכם להגיש תביעות בבתי המשפט במדינת מגוריכם, ולהגיש תלונות לרשות הגנת המידע המקומית שלכם, ללא תלות בסעיף הדין החל שלעיל.</p>
+        </section>
+      
+      <footer class="footer">
+        <div>צריכים עזרה או יש לכם שאלות?</div>
+        <div>אפשר לפנות אלינו בכתובת <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

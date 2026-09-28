@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baby Tracker IL · Politique de confidentialité">
+  <title>Politique de confidentialité - Baby Tracker IL</title>
+  <style>
+    :root {
+      --bg-1: #f5efe7;
+      --bg-2: #efe6ff;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-border: rgba(106, 76, 147, 0.14);
+      --text: #1f2333;
+      --muted: #5b6173;
+      --primary: #6a4c93;
+      --primary-soft: #efe7fb;
+      --warning-bg: #fff4d8;
+      --warning-border: #f0c14b;
+      --shadow: 0 28px 70px rgba(41, 28, 68, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 34%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      padding: 34px 30px 24px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.36), transparent 34%),
+        linear-gradient(135deg, #f9f3ff 0%, #f2ebff 55%, #fdf7ed 100%);
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .doc-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(106, 76, 147, 0.16);
+      transition: transform 0.16s ease, border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+    }
+
+    .tab:hover,
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(106, 76, 147, 0.3);
+      color: var(--text);
+    }
+
+    .tab.active,
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .language-switcher {
+      display: grid;
+      gap: 10px;
+    }
+
+    .switcher-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section + .section {
+      margin-top: 28px;
+    }
+
+    .section h2,
+    .callout h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p,
+    li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    p + p,
+    p + ul,
+    ul + p,
+    ul + ul {
+      margin-top: 14px;
+    }
+
+    .lead {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 14px 0 0;
+      padding-inline-start: 22px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+    }
+
+    .intro-box {
+      background: var(--primary-soft);
+      border: 1px solid rgba(106, 76, 147, 0.12);
+      margin-bottom: 26px;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid rgba(240, 193, 75, 0.44);
+      margin-top: 26px;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      padding-inline-start: 52px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .footer {
+      display: grid;
+      gap: 6px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .hero,
+      .content { padding: 22px 18px; }
+      .tab,
+      .pill { width: 100%; justify-content: center; }
+      .steps li { padding-inline-start: 48px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Baby Tracker IL</p>
+      <h1>Politique de confidentialité</h1>
+      <p class="meta">Dernière mise à jour : 28 septembre 2026</p>
+      <div class="toolbar">
+        <nav class="doc-tabs"><a class="tab active" href="index.html">Politique de confidentialité</a><a class="tab" href="terms-of-service.html">Conditions d&#39;Utilisation</a><a class="tab" href="account-deletion.html">Supprimer le compte</a></nav>
+        <div class="language-switcher"><span class="switcher-label">Langue</span><div class="pill-row"><a class="pill" href="../index.html" lang="en">English</a><a class="pill" href="../he/index.html" lang="he">עברית</a><a class="pill" href="../es/index.html" lang="es">Español</a><a class="pill active" href="index.html" lang="fr">Français</a><a class="pill" href="../ru/index.html" lang="ru">Русский</a></div></div>
+      </div>
+    </header>
+    <div class="content">
+      
+        <section class="section">
+          <h2>1. Responsable du traitement des données</h2>
+          <p>Baby Tracker IL (ci-après « l&#39;Application ») est développée et exploitée de manière indépendante depuis Tel Aviv, Israël. Pour toute question relative à la protection des données à caractère personnel, veuillez nous contacter à l&#39;adresse suivante : <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a>.</p>
+        </section>
+      
+        <section class="section">
+          <h2>2. Objet de la présente politique</h2>
+          <p>La présente Politique de confidentialité décrit les modalités selon lesquelles nous collectons, utilisons, conservons, partageons et protégeons vos données à caractère personnel — y compris les données de santé relevant de catégories particulières — dans le cadre de votre utilisation de Baby Tracker IL.</p><p>La présente politique décrit la manière dont la version actuelle de l&#39;Application traite vos données. Elle a vocation à refléter la législation applicable en matière de protection des données, notamment la Loi israélienne sur la protection de la vie privée (5741-1981) et, le cas échéant, le Règlement général sur la protection des données (RGPD) de l&#39;Union européenne.</p>
+        </section>
+      
+        <section class="section">
+          <h2>3. Bases juridiques du traitement</h2>
+          <p>Nous traitons vos données sur les fondements juridiques suivants :</p><ul><li>Données de compte (adresse e-mail, nom) : Exécution d&#39;un contrat (RGPD, art. 6, par. 1, point b)) — nécessaire à la fourniture des services de l&#39;Application.</li><li>Données techniques relatives à l&#39;appareil : Intérêt légitime (art. 6, par. 1, point f)) — aux fins d&#39;assurer la compatibilité et de corriger les anomalies. Nos intérêts légitimes sont mis en balance avec vos droits et libertés et se limitent à ce qui est strictement nécessaire pour garantir la sécurité et la stabilité de l&#39;Application.</li><li>Notifications push : Consentement (art. 6, par. 1, point a)) — vous choisissez librement de les activer et pouvez les désactiver à tout moment.</li><li>Publicité (offre gratuite) : Intérêt légitime (art. 6, par. 1, point f)) — sur les versions Android où la publicité est activée, la version gratuite peut afficher des annonces non personnalisées Google AdMob, au format bannière et interstitiel, dans certaines sections de l&#39;Application. Nous demandons uniquement des annonces non personnalisées et les abonnés Premium ne voient pas de publicité.</li><li>Assistant parental IA : Consentement explicite (art. 6, par. 1, point a)) — avant la première utilisation de la fonctionnalité « Est-ce normal ? », une boîte de dialogue de consentement vous est présentée, indiquant que les données contextuelles de santé de votre enfant seront transmises à Google Gemini aux fins de génération de réponse. Vous devez accepter avant toute transmission de données.</li></ul><p>Données de santé (RGPD, article 9) :<br>L&#39;Application traite des données relatives à la santé, notamment le suivi de grossesse, les enregistrements de contractions, les mesures de croissance, les calendriers de vaccination, les journaux d&#39;alimentation, de sommeil et de couches ainsi que des informations médicales. Ces données constituent des données de catégories particulières au sens de l&#39;article 9.</p><p>Notre base juridique est votre consentement explicite (article 9, paragraphe 2, point a)). Vous fournissez ce consentement lorsque vous saisissez volontairement des informations de santé dans l&#39;Application. Lorsque vous utilisez l&#39;assistant IA, une boîte de dialogue de consentement explicite vous est présentée avant toute transmission de données contextuelles de santé à Google Gemini AI aux fins de génération de réponses. Vous pouvez retirer votre consentement en cessant d&#39;utiliser les fonctionnalités concernées et en demandant la suppression des données de votre compte.</p>
+        </section>
+      
+        <section class="section">
+          <h2>4. Données que nous collectons</h2>
+          <p class="lead">Données que vous fournissez :</p><ul><li>Compte : Adresse e-mail, nom d&#39;affichage, photo de profil.</li><li>Profils enfants : Nom, date de naissance, date prévue d&#39;accouchement, sexe, poids et taille à la naissance, mode d&#39;accouchement, périmètre crânien, pointure/taille de vêtements, coordonnées du centre Tipat Halav.</li><li>Grossesse : Date prévue d&#39;accouchement, suivi hebdomadaire.</li><li>Contractions : Heures de début et de fin, durée, fréquence, intensité.</li><li>Croissance : Poids, taille, périmètre crânien.</li><li>Données médicales : Dates de vaccination, état des bilans de santé, résultats d&#39;examens, dates de rendez-vous.</li><li>Étapes de développement : Premières fois, dates, photographies, vidéos, notes.</li><li>Alimentation : Type (allaitement maternel/biberon), quantité, heure, durée, côté, notes.</li><li>Sommeil : Heure de début, durée, notes.</li><li>Couches : Type (mouillée/souillée/mixte), couleur des selles, consistance des selles, érythème fessier, heure, notes.</li><li>Dentition : Position des dents et dates d&#39;éruption.</li><li>Conversations IA : Questions posées à l&#39;assistant parental « Est-ce normal ? » et réponses générées par l&#39;IA.</li><li>Partage avec les soignants : Adresses e-mail des personnes que vous invitez à accéder à un profil enfant, rôle attribué et statut de l&#39;invitation.</li></ul><p class="lead">Données collectées automatiquement :</p><ul><li>Type d&#39;appareil, version du système d&#39;exploitation et version de l&#39;Application (aux fins de compatibilité et de correction d&#39;anomalies).</li><li>Préférence linguistique.</li><li>Données publicitaires : sur les versions Android où la publicité est activée, Google AdMob peut collecter l&#39;adresse IP, le type d&#39;appareil et des données d&#39;interaction lorsque des annonces non personnalisées sont affichées dans certaines sections de la version gratuite.</li></ul><p>Données biométriques : Si vous activez le déverrouillage biométrique (Face ID / empreinte digitale), votre modèle biométrique est traité exclusivement sur votre appareil par le système d&#39;exploitation. Nous ne recevons, ne transmettons ni ne stockons jamais de données biométriques. Seul un jeton de session chiffré est conservé localement sur votre appareil.</p><p>Accès au calendrier : si vous choisissez d&#39;ajouter des rendez-vous médicaux au calendrier de votre appareil, l&#39;Application demande l&#39;autorisation d&#39;accès au calendrier et écrit les événements localement sur votre appareil. Les données du calendrier ne sont pas transmises à nos serveurs.</p>
+        </section>
+      
+        <section class="section">
+          <h2>5. Utilisation de vos données</h2>
+          <p>Nous utilisons vos données aux fins suivantes :</p><ul><li>Fournir les fonctionnalités de suivi de grossesse et de développement de l&#39;enfant.</li><li>Afficher les calendriers médicaux israéliens (recommandations du ministère israélien de la Santé, programmes de Tipat Halav et normes de croissance de l&#39;OMS).</li><li>Générer des courbes de croissance et des comparaisons de percentiles.</li><li>Envoyer des rappels facultatifs d&#39;alimentation, de sommeil, de vaccination, de bilans médicaux et d&#39;étapes de développement (si vous activez les notifications).</li><li>Alimenter l&#39;assistant IA « Est-ce normal ? » à l&#39;aide des données contextuelles de l&#39;enfant.</li><li>Vous permettre de partager des profils enfants avec les soignants que vous invitez.</li><li>Répondre aux demandes d&#39;assistance que vous nous adressez par e-mail.</li><li>Afficher des annonces non personnalisées Google AdMob, au format bannière et interstitiel, dans certaines sections de la version Android gratuite lorsque la publicité est activée.</li><li>Traiter les abonnements in-app Android via RevenueCat et Google Play.</li><li>Corriger les anomalies et améliorer l&#39;Application.</li></ul><p>Nous n&#39;utilisons en AUCUN CAS vos données à des fins de : profilage commercial, prise de décision automatisée, ni de vente ou de location à quelque tiers que ce soit. Nous ne communiquons aucune donnée de santé à des assureurs, des employeurs ou des entités commerciales.</p>
+        </section>
+      
+        <section class="section">
+          <h2>6. Partage des données et transferts internationaux</h2>
+          <p>Nous ne vendons, ne louons ni ne faisons commerce de vos données à caractère personnel. La version actuelle de l&#39;Application utilise les prestataires suivants :</p><ul><li>Supabase (Supabase Inc.) : base de données, authentification, fonctions edge et stockage de fichiers.</li><li>Connexion avec Google (Google LLC) : facultatif. Si vous choisissez de vous connecter avec Google, Google nous transmet votre nom, votre adresse e-mail et votre photo de profil afin de créer ou d&#39;accéder à votre compte. Nous ne recevons jamais votre mot de passe Google.</li><li>Expo : mises à jour de l&#39;application et infrastructure de notifications push.</li><li>Google Gemini API (Google LLC) : alimente l&#39;assistant « Est-ce normal ? ». Lorsque vous utilisez cette fonctionnalité, des données contextuelles de l&#39;enfant (telles que l&#39;âge, le sexe et des résumés récents d&#39;alimentation, de sommeil, de couches, de croissance et d&#39;étapes de développement) sont envoyées à l&#39;API Gemini de Google pour générer une réponse. L&#39;historique des conversations est stocké dans notre base de données.</li><li>Google AdMob (Google LLC) : sur les versions Android où la publicité est activée, peut diffuser des annonces non personnalisées, au format bannière et interstitiel, dans certaines sections de la version gratuite.</li><li>RevenueCat (RevenueCat Inc.) : sur Android, aide à gérer l&#39;état des abonnements et la vérification des achats.</li><li>Google Play Billing / services de notifications Apple : l&#39;infrastructure de facturation des stores et de distribution des notifications push peut traiter les identifiants techniques nécessaires à ces services.</li></ul><p>Partage avec les soignants : si vous invitez une autre personne à accéder à un profil enfant, l&#39;adresse e-mail d&#39;invitation est stockée dans notre base de données et l&#39;Application génère un lien d&#39;invitation partageable. Les soignants invités peuvent consulter et, selon leur rôle, modifier les données de l&#39;enfant après avoir accepté l&#39;invitation. Il vous incombe de vous assurer que vous disposez du consentement approprié pour partager les données d&#39;un enfant avec les soignants invités.</p><p>Transferts internationaux : certains de ces prestataires peuvent traiter des données en dehors de votre pays de résidence, y compris aux États-Unis.</p><p>Nous sommes également susceptibles de communiquer des données lorsque la législation israélienne ou une procédure judiciaire valide l&#39;exige, ou avec votre consentement explicite.</p>
+        </section>
+      
+        <section class="section">
+          <h2>7. Sécurité des données</h2>
+          <ul><li>Sécurité au niveau des lignes (RLS) appliquée au niveau de la base de données — chaque utilisateur ne peut accéder qu&#39;à ses propres données.</li><li>Chiffrement en transit : TLS 1.2+ pour l&#39;ensemble des communications.</li><li>Chiffrement au repos : AES-256 pour l&#39;ensemble des données stockées.</li><li>Authentification sécurisée par jetons JWT.</li><li>Principe du moindre privilège appliqué à l&#39;ensemble des prestataires de services.</li><li>Les pratiques de sécurité sont révisées et mises à jour dans le cadre de notre processus de développement.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>8. Notification en cas de violation de données</h2>
+          <p>En cas de violation de données à caractère personnel susceptible d&#39;engendrer un risque pour vos droits et libertés :</p><ul><li>Nous notifierons l&#39;autorité de contrôle compétente (Autorité israélienne de protection de la vie privée et/ou autorité compétente de l&#39;UE) dans un délai de 72 heures, conformément à l&#39;article 33 du RGPD.</li><li>Si la violation est susceptible d&#39;engendrer un risque élevé pour vos droits et libertés, nous vous en informerons directement et sans retard injustifié par courrier électronique ou notification intégrée à l&#39;Application, conformément à l&#39;article 34 du RGPD.</li><li>Les notifications comprendront : la nature de la violation, les catégories de données concernées, les conséquences probables et les mesures prises ou envisagées pour y remédier.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>9. Protection des données des mineurs</h2>
+          <p>Baby Tracker IL est un outil exclusivement destiné aux utilisateurs majeurs (parents et représentants légaux). L&#39;Application ne s&#39;adresse pas aux mineurs et n&#39;est pas conçue pour être utilisée par des personnes âgées de moins de 16 ans. Nous ne collectons pas sciemment de données à caractère personnel directement auprès de mineurs.</p><p>L&#39;ensemble des données relatives aux enfants — y compris les noms, les dossiers médicaux, les étapes de développement et les mesures — est saisi et géré exclusivement par le titulaire adulte du compte, lequel assume la responsabilité de l&#39;exactitude des données fournies et de sa qualité de représentant légal habilité à les communiquer.</p><p>Si nous prenons connaissance du fait que des données ont été collectées auprès d&#39;une personne âgée de moins de 16 ans sans consentement parental vérifié, nous procéderons à la suppression immédiate de ces données.</p>
+        </section>
+      
+        <section class="section">
+          <h2>10. Vos droits</h2>
+          <p>En vertu de la législation israélienne et du RGPD, vous disposez des droits suivants :</p><ul><li>Droit d&#39;accès (art. 15) : Obtenir une copie de l&#39;ensemble des données que nous détenons à votre sujet.</li><li>Droit de rectification (art. 16) : Faire corriger les données inexactes ou incomplètes.</li><li>Droit à l&#39;effacement (art. 17) : Obtenir la suppression de votre compte et des données associées, sous réserve des limites techniques et légales.</li><li>Droit à la limitation du traitement (art. 18) : Obtenir la suspension temporaire du traitement dans certaines circonstances.</li><li>Droit à la portabilité (art. 20) : Recevoir vos données dans un format structuré, couramment utilisé et lisible par machine lorsque cela est applicable.</li><li>Droit d&#39;opposition (art. 21) : Vous opposer au traitement fondé sur l&#39;intérêt légitime.</li><li>Droit de retrait du consentement (art. 7, par. 3) : Retirer à tout moment votre consentement au traitement des données de santé.</li></ul><p>Suppression du compte : Vous pouvez supprimer votre compte directement depuis l&#39;Application en accédant à Paramètres, puis en sélectionnant « Supprimer le compte ». L&#39;implémentation actuelle supprime immédiatement votre compte d&#39;authentification et efface les enregistrements de base de données des profils enfants dont vous êtes l&#39;unique propriétaire. Si un profil enfant est partagé avec d&#39;autres soignants, ce profil partagé reste disponible pour ces autres soignants. Certains fichiers téléversés, sauvegardes et journaux fournisseurs peuvent subsister jusqu&#39;à un nettoyage ultérieur conformément aux politiques de conservation applicables. Vous pouvez également demander la suppression de votre compte par e-mail à <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a>.</p><p>Pour exercer tout autre droit, écrivez à <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a>. Nous essayons de répondre dans un délai raisonnable et, lorsque cela s&#39;applique, dans le délai prévu par la loi.</p><p>Droit d&#39;introduire une réclamation : Vous pouvez déposer une réclamation auprès de l&#39;Autorité israélienne de protection de la vie privée (PPA) — site web : <a href="https://www.gov.il/en/departments/the_privacy_protection_authority" target="_blank" rel="noopener noreferrer">gov.il/en/departments/the_privacy_protection_authority</a>, e-mail : <a href="mailto:ppa@justice.gov.il">ppa@justice.gov.il</a>, téléphone : *3103. Les résidents de l&#39;Union européenne peuvent également saisir l&#39;autorité de contrôle compétente de leur pays de résidence.</p>
+        </section>
+      
+        <section class="section">
+          <h2>11. Conservation des données</h2>
+          <ul><li>Comptes actifs : les données sont conservées tant que votre compte reste actif.</li><li>Profils enfants supprimés dont vous êtes l&#39;unique propriétaire : supprimés dans le cadre du processus de suppression du compte.</li><li>Comptes supprimés : le compte d&#39;authentification est supprimé immédiatement. Les enregistrements de base de données liés aux profils enfants dont vous êtes l&#39;unique propriétaire sont supprimés pendant le processus. Les profils enfants partagés restent disponibles pour les soignants restants.</li><li>Historique des conversations IA : conservé tant que le profil enfant concerné existe dans la base de données.</li><li>Invitations de soignants : les invitations expirées sont automatiquement invalidées après 7 jours.</li><li>Médias téléversés, sauvegardes et journaux d&#39;infrastructure : peuvent être conservés pendant une durée limitée selon les politiques de conservation et de sauvegarde des prestataires concernés.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>12. Modifications de la présente politique</h2>
+          <p>Nous nous réservons le droit de modifier la présente politique. En cas de modifications substantielles (nouvelles catégories de données, nouveaux sous-traitants, changement de base juridique), nous vous en informerons par notification intégrée à l&#39;Application ou par courrier électronique préalablement à l&#39;entrée en vigueur desdites modifications. Si les modifications portent sur le traitement des données de santé, nous solliciterons votre consentement explicite renouvelé. Pour les modifications n&#39;affectant pas vos droits ni le traitement de données sensibles, un préavis raisonnable vous sera donné et vous pourrez choisir de cesser d&#39;utiliser l&#39;Application si vous n&#39;y consentez pas.</p>
+        </section>
+      
+        <section class="section">
+          <h2>13. Droit applicable et juridiction compétente</h2>
+          <p>La présente Politique de confidentialité est régie par le droit de l&#39;État d&#39;Israël. Tout litige découlant de la présente politique relève de la compétence des tribunaux compétents de Tel Aviv-Jaffa, Israël.</p><p>Pour les utilisateurs résidant dans l&#39;Union européenne : Aucune disposition de la présente politique ne saurait restreindre vos droits au titre du RGPD. Vous conservez le droit d&#39;introduire un recours devant les juridictions de votre pays de résidence et de déposer une réclamation auprès de l&#39;autorité de contrôle compétente de votre État membre, nonobstant la clause de droit applicable susmentionnée.</p>
+        </section>
+      
+      <footer class="footer">
+        <div>Besoin d’aide ou des questions ?</div>
+        <div>Contactez-nous à <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

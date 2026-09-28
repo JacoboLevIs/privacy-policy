@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baby Tracker IL · Conditions d&#39;Utilisation">
+  <title>Conditions d&#39;Utilisation - Baby Tracker IL</title>
+  <style>
+    :root {
+      --bg-1: #f5efe7;
+      --bg-2: #efe6ff;
+      --surface: rgba(255, 255, 255, 0.94);
+      --surface-border: rgba(106, 76, 147, 0.14);
+      --text: #1f2333;
+      --muted: #5b6173;
+      --primary: #6a4c93;
+      --primary-soft: #efe7fb;
+      --warning-bg: #fff4d8;
+      --warning-border: #f0c14b;
+      --shadow: 0 28px 70px rgba(41, 28, 68, 0.14);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --radius-md: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.72), transparent 34%),
+        linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .hero {
+      padding: 34px 30px 24px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.36), transparent 34%),
+        linear-gradient(135deg, #f9f3ff 0%, #f2ebff 55%, #fdf7ed 100%);
+      border-bottom: 1px solid var(--surface-border);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 1.08;
+    }
+
+    .meta {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .toolbar {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .doc-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tab,
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(106, 76, 147, 0.16);
+      transition: transform 0.16s ease, border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+    }
+
+    .tab:hover,
+    .pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(106, 76, 147, 0.3);
+      color: var(--text);
+    }
+
+    .tab.active,
+    .pill.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .language-switcher {
+      display: grid;
+      gap: 10px;
+    }
+
+    .switcher-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .section + .section {
+      margin-top: 28px;
+    }
+
+    .section h2,
+    .callout h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      line-height: 1.25;
+    }
+
+    p,
+    li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.72;
+    }
+
+    p + p,
+    p + ul,
+    ul + p,
+    ul + ul {
+      margin-top: 14px;
+    }
+
+    .lead {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    ul,
+    ol {
+      margin: 14px 0 0;
+      padding-inline-start: 22px;
+    }
+
+    li + li {
+      margin-top: 10px;
+    }
+
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 18px 18px 20px;
+    }
+
+    .intro-box {
+      background: var(--primary-soft);
+      border: 1px solid rgba(106, 76, 147, 0.12);
+      margin-bottom: 26px;
+    }
+
+    .warning-box {
+      background: var(--warning-bg);
+      border: 1px solid rgba(240, 193, 75, 0.44);
+      margin-top: 26px;
+    }
+
+    .steps {
+      counter-reset: steps;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .steps li {
+      counter-increment: steps;
+      position: relative;
+      padding-inline-start: 52px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+
+    .steps li::before {
+      content: counter(steps);
+      position: absolute;
+      inset-inline-start: 0;
+      top: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--primary);
+    }
+
+    .footer {
+      display: grid;
+      gap: 6px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--surface-border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      body { padding: 14px; }
+      .hero,
+      .content { padding: 22px 18px; }
+      .tab,
+      .pill { width: 100%; justify-content: center; }
+      .steps li { padding-inline-start: 48px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Baby Tracker IL</p>
+      <h1>Conditions d&#39;Utilisation</h1>
+      <p class="meta">Dernière mise à jour : 19 mars 2026</p>
+      <div class="toolbar">
+        <nav class="doc-tabs"><a class="tab" href="index.html">Politique de confidentialité</a><a class="tab active" href="terms-of-service.html">Conditions d&#39;Utilisation</a><a class="tab" href="account-deletion.html">Supprimer le compte</a></nav>
+        <div class="language-switcher"><span class="switcher-label">Langue</span><div class="pill-row"><a class="pill" href="../terms-of-service.html" lang="en">English</a><a class="pill" href="../he/terms-of-service.html" lang="he">עברית</a><a class="pill" href="../es/terms-of-service.html" lang="es">Español</a><a class="pill active" href="terms-of-service.html" lang="fr">Français</a><a class="pill" href="../ru/terms-of-service.html" lang="ru">Русский</a></div></div>
+      </div>
+    </header>
+    <div class="content">
+      
+        <section class="section">
+          <h2>1. Acceptation des Conditions</h2>
+          <p>En créant un compte ou en utilisant Baby Tracker IL (« l&#39;Application »), vous acceptez d&#39;être lié par ces Conditions d&#39;Utilisation (« Conditions »). Si vous n&#39;acceptez pas ces Conditions, n&#39;utilisez pas l&#39;Application.</p><p>Ces Conditions constituent un accord juridiquement contraignant entre vous et Baby Tracker IL. Veuillez les lire attentivement.</p>
+        </section>
+      
+        <section class="section">
+          <h2>2. Description du Service</h2>
+          <p>Baby Tracker IL est une application mobile qui aide les parents et les aidants à suivre la grossesse et le développement du bébé. Les fonctionnalités incluent :</p><ul><li>Suivi hebdomadaire de la grossesse et minuteur de contractions.</li><li>Suivi du nouveau-né : journaux d&#39;alimentation, de sommeil et de couches.</li><li>Courbes de croissance basées sur les normes de l&#39;OMS.</li><li>Suivi des étapes de développement.</li><li>Calendrier de vaccination et de bilans médicaux (selon les directives du Ministère de la Santé d&#39;Israël).</li><li>Carte d&#39;éruption dentaire.</li><li>Assistant parental alimenté par l&#39;IA (« Est-ce normal ? »).</li><li>Partage de profils avec plusieurs aidants.</li><li>Rappels par notifications push.</li></ul><p>Les fonctionnalités peuvent varier entre les plans gratuit et premium, et peuvent être modifiées, ajoutées ou supprimées à tout moment avec un préavis raisonnable.</p>
+        </section>
+      
+        <section class="section">
+          <h2>3. Éligibilité</h2>
+          <p>Vous devez avoir au moins 18 ans (ou l&#39;âge de la majorité légale dans votre juridiction) pour créer un compte et utiliser cette Application. L&#39;Application est destinée aux parents, tuteurs légaux et aidants autorisés. Elle n&#39;est pas destinée à une utilisation directe par des enfants ou des mineurs.</p><p>En utilisant l&#39;Application, vous déclarez et garantissez que vous remplissez ces conditions d&#39;éligibilité et que vous avez l&#39;autorité légale pour saisir des données concernant tout enfant dont vous créez le profil.</p>
+        </section>
+      
+        <section class="section">
+          <h2>4. Inscription au Compte</h2>
+          <p>Pour utiliser l&#39;Application, vous devez créer un compte avec une adresse e-mail valide. Vous êtes responsable de :</p><ul><li>Maintenir la confidentialité de vos identifiants de connexion.</li><li>Toute activité qui se produit sous votre compte.</li><li>Fournir des informations exactes et à jour.</li><li>Nous informer immédiatement si vous soupçonnez un accès non autorisé à votre compte.</li></ul><p>Nous nous réservons le droit de suspendre ou de résilier les comptes qui enfreignent ces Conditions.</p>
+        </section>
+      
+        <section class="section">
+          <h2>5. Plans d&#39;Abonnement et Facturation</h2>
+          <p>L&#39;Application propose deux niveaux :</p><p class="lead">Plan Gratuit :</p><ul><li>Fonctionnalités de suivi de base avec fonctionnalité limitée.</li><li>Peut inclure des annonces non personnalisées Google AdMob, au format bannière et interstitiel, dans certaines sections des versions Android où la publicité est activée.</li><li>Utilisation limitée de l&#39;assistant IA (soumise à des limites quotidiennes de messages).</li></ul><p class="lead">Plan Premium :</p><ul><li>Toutes les fonctionnalités débloquées, y compris les courbes de croissance avancées, l&#39;export PDF et l&#39;accès étendu à l&#39;assistant IA.</li><li>Sans publicités.</li><li>Support de profils multi-enfants.</li></ul><p>À ce jour, les achats Premium dans la version actuelle de l&#39;application sont traités via Google Play sur Android. Baby Tracker IL ne traite pas directement les paiements par carte. Le prix est affiché par le store applicable et peut varier selon la région. Si nous proposons plus tard des abonnements payants sur iOS, les conditions de facturation de l&#39;Apple App Store s&#39;appliqueront alors.</p><p>En vous abonnant, vous autorisez le store applicable à facturer votre moyen de paiement sélectionné de manière récurrente jusqu&#39;à annulation.</p>
+        </section>
+      
+        <section class="section">
+          <h2>6. Période d&#39;Essai Gratuite</h2>
+          <p>Si une période d&#39;essai gratuite est proposée, elle sera clairement indiquée au moment de l&#39;abonnement. À la fin de la période d&#39;essai, votre abonnement se convertira automatiquement en abonnement payant sauf si vous annulez avant l&#39;expiration de l&#39;essai. Vous pouvez annuler à tout moment pendant l&#39;essai sans frais via les paramètres d&#39;abonnement de votre appareil.</p>
+        </section>
+      
+        <section class="section">
+          <h2>7. Politique d&#39;Annulation</h2>
+          <p>Vous pouvez annuler votre abonnement Premium à tout moment via le store utilisé pour l&#39;achat.</p><ul><li>Android (actuellement pris en charge) : Google Play Store &gt; Abonnements &gt; Baby Tracker IL &gt; Annuler.</li><li>iOS : si des abonnements iOS sont proposés à l&#39;avenir, l&#39;annulation se fera depuis les réglages d&#39;abonnement Apple.</li></ul><p class="lead">En cas d&#39;annulation :</p><ul><li>Votre accès Premium reste actif jusqu&#39;à la fin de la période de facturation en cours.</li><li>Aucun remboursement au prorata n&#39;est émis pour les portions inutilisées d&#39;une période de facturation.</li><li>Après expiration, votre compte revient au Plan Gratuit.</li><li>Vos données sont conservées et restent accessibles sous les limitations du Plan Gratuit.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>8. Politique de Remboursement</h2>
+          <p>Les remboursements sont gérés par la plateforme de paiement utilisée pour l&#39;achat.</p><ul><li>Google Play (actuellement pris en charge) : les demandes de remboursement sont traitées conformément aux règles Google Play. Voir <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer">https://support.google.com/googleplay/answer/2479637</a></li><li>Apple App Store : si des abonnements iOS sont proposés à l&#39;avenir, les demandes de remboursement passeront par la procédure d&#39;Apple sur <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer">https://reportaproblem.apple.com</a></li></ul><p>Baby Tracker IL ne traite pas directement les remboursements et ne peut pas émettre de remboursement en dehors des mécanismes du store concerné.</p>
+        </section>
+      
+        <section class="section">
+          <h2>9. Assistant IA — Avertissement Médical</h2>
+          <p>IMPORTANT : VEUILLEZ LIRE ATTENTIVEMENT CETTE SECTION.</p><p>L&#39;Application comprend une fonctionnalité alimentée par l&#39;IA appelée « Est-ce normal ? » qui fournit des réponses informatives générales sur la grossesse et le développement du bébé. Cette fonctionnalité utilise Google Gemini AI.</p><p>CETTE FONCTIONNALITÉ N&#39;EST PAS UN SERVICE MÉDICAL. Spécifiquement :</p><ul><li>L&#39;assistant IA ne fournit PAS de conseil médical, de diagnostic ou de recommandations de traitement.</li><li>Il ne remplace PAS la consultation d&#39;un pédiatre, obstétricien, gynécologue, sage-femme ou tout autre professionnel de santé qualifié.</li><li>Les réponses sont générées par l&#39;intelligence artificielle et peuvent contenir des inexactitudes, des informations obsolètes ou des informations qui ne s&#39;appliquent pas à votre situation spécifique.</li><li>Vous ne devez JAMAIS utiliser les réponses de l&#39;IA comme seule base pour des décisions médicales concernant votre santé ou celle de votre enfant.</li><li>En cas d&#39;urgence médicale, contactez les services d&#39;urgence locaux (ex : 101 en Israël, 15/SAMU en France, 112 en Europe) ou rendez-vous aux urgences les plus proches immédiatement.</li></ul><p class="lead">En utilisant l&#39;assistant IA, vous reconnaissez et acceptez que :</p><ul><li>Vous utilisez cette fonctionnalité entièrement à vos propres risques.</li><li>Baby Tracker IL, ses développeurs et ses affiliés n&#39;assument aucune responsabilité pour les actions entreprises ou les décisions prises sur la base des réponses générées par l&#39;IA.</li><li>Vous consulterez toujours un professionnel de santé qualifié pour les préoccupations médicales.</li></ul>
+        </section>
+      
+        <section class="section">
+          <h2>10. Contenu de l&#39;Utilisateur et Données</h2>
+          <p>Vous conservez la propriété de toutes les données que vous saisissez dans l&#39;Application (profils d&#39;enfants, dossiers de santé, étapes, photos, etc.). Vous êtes seul responsable de l&#39;exactitude et de la légalité des données que vous fournissez.</p><p>En utilisant l&#39;Application, vous accordez à Baby Tracker IL une licence limitée pour traiter vos données uniquement dans le but de fournir les services de l&#39;Application, tel que décrit dans notre Politique de Confidentialité.</p><p>Pour des informations détaillées sur la façon dont nous collectons, utilisons, stockons et protégeons vos données, veuillez consulter notre Politique de Confidentialité, disponible dans l&#39;Application.</p>
+        </section>
+      
+        <section class="section">
+          <h2>11. Utilisation Interdite</h2>
+          <p>Vous acceptez de ne pas :</p><ul><li>Utiliser l&#39;Application à des fins illégales ou en violation de toute loi applicable.</li><li>Tenter d&#39;obtenir un accès non autorisé à l&#39;Application, aux comptes d&#39;autres utilisateurs, ou à nos serveurs et systèmes.</li><li>Procéder à l&#39;ingénierie inverse, décompiler ou désassembler l&#39;Application ou ses composants.</li><li>Utiliser des systèmes automatisés (bots, scrapers, crawlers) pour accéder ou collecter des données de l&#39;Application.</li><li>Transmettre des virus, logiciels malveillants ou tout code nuisible.</li><li>Usurper l&#39;identité d&#39;une autre personne ou entité.</li><li>Utiliser l&#39;Application pour harceler, abuser ou nuire à autrui.</li></ul><p>La violation de ces conditions peut entraîner la suspension ou la résiliation immédiate du compte.</p>
+        </section>
+      
+        <section class="section">
+          <h2>12. Propriété Intellectuelle</h2>
+          <p>L&#39;Application, y compris son design, son code, ses fonctionnalités, son contenu, ses marques et ses logos, est la propriété intellectuelle de Baby Tracker IL et est protégée par les lois applicables sur le droit d&#39;auteur, les marques et la propriété intellectuelle.</p><p>Vous ne pouvez pas copier, modifier, distribuer, vendre ou créer des œuvres dérivées basées sur l&#39;Application ou son contenu sans autorisation écrite préalable.</p><p>Le contenu généré par l&#39;utilisateur (vos données, photos, notes) reste votre propriété, sous réserve de la licence limitée accordée à la Section 10.</p>
+        </section>
+      
+        <section class="section">
+          <h2>13. Limitation de Responsabilité et Exclusion de Garanties</h2>
+          <p>L&#39;APPLICATION EST FOURNIE « EN L&#39;ÉTAT » ET « SELON DISPONIBILITÉ » SANS GARANTIES D&#39;AUCUNE SORTE, EXPRESSES OU IMPLICITES, Y COMPRIS MAIS SANS S&#39;Y LIMITER LES GARANTIES DE QUALITÉ MARCHANDE, D&#39;ADÉQUATION À UN USAGE PARTICULIER ET DE NON-CONTREFAÇON.</p><p class="lead">Baby Tracker IL ne garantit pas que :</p><ul><li>L&#39;Application sera disponible à tout moment ou sans interruption.</li><li>L&#39;Application sera exempte d&#39;erreurs, de bugs ou de vulnérabilités de sécurité.</li><li>Les informations fournies par l&#39;Application (y compris les réponses de l&#39;IA, les percentiles de croissance et les calendriers médicaux) seront exactes, complètes ou actuelles.</li></ul><p>DANS LA MESURE MAXIMALE AUTORISÉE PAR LA LOI APPLICABLE, Baby Tracker IL et ses développeurs ne seront pas responsables de tout dommage indirect, accessoire, spécial, consécutif ou punitif découlant de ou lié à votre utilisation de l&#39;Application.</p><p>Dans les juridictions qui n&#39;autorisent pas l&#39;exclusion de certaines garanties ou la limitation de responsabilité, notre responsabilité sera limitée au maximum autorisé par la loi.</p>
+        </section>
+      
+        <section class="section">
+          <h2>14. Modifications de ces Conditions</h2>
+          <p>Nous pouvons mettre à jour ces Conditions de temps à autre. En cas de modification importante, nous essaierons de vous en informer par notification dans l&#39;application ou par e-mail avant son entrée en vigueur lorsque cela est approprié.</p><p>Votre utilisation continue de l&#39;Application après la date d&#39;effet des Conditions mises à jour constitue votre acceptation des modifications. Si vous n&#39;acceptez pas les Conditions mises à jour, vous devez cesser d&#39;utiliser l&#39;Application et supprimer votre compte.</p>
+        </section>
+      
+        <section class="section">
+          <h2>15. Droit Applicable et Résolution des Litiges</h2>
+          <p>Ces Conditions sont régies par les lois de l&#39;État d&#39;Israël. Tout litige découlant de ou lié à ces Conditions ou à votre utilisation de l&#39;Application sera soumis à la juridiction exclusive des tribunaux compétents de Tel Aviv-Jaffa, Israël.</p><p>Pour les utilisateurs de l&#39;Union européenne : Rien dans ces Conditions ne limite vos droits en vertu des lois applicables de protection des consommateurs de l&#39;UE. Vous conservez le droit de porter des réclamations devant les tribunaux de votre pays de résidence.</p>
+        </section>
+      
+        <section class="section">
+          <h2>16. Contact</h2>
+          <p>Pour toute question ou préoccupation concernant ces Conditions d&#39;Utilisation, contactez-nous à :</p><p>E-mail : <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></p>
+        </section>
+      
+      <footer class="footer">
+        <div>Besoin d’aide ou des questions ?</div>
+        <div>Contactez-nous à <a href="mailto:tinoktracker@gmail.com">tinoktracker@gmail.com</a></div>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>
